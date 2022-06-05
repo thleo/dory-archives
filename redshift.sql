@@ -31,3 +31,6 @@ WHERE
     u.usename = 'myUserName'
     AND s.schemaname = 'mySchemaName'
 ;
+
+--drop your schemas that have dependencies on each other
+drop schema clean, core cascade ;
