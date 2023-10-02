@@ -15,7 +15,7 @@ LEFT JOIN marts_digital.person_day  AS subscription_tiers_daily ON subscription_
 LEFT JOIN marts_digital.clinical_time_per_subs  AS clinical_time_per_subs ON accounts.account_id=clinical_time_per_subs.account_id
 LEFT JOIN marts_digital.cases  AS cases ON cases.account_id  = accounts.account_id and cases.account_id=clinical_time_per_subs.account_id and
           (TO_CHAR(DATE_TRUNC('month', CONVERT_TIMEZONE('UTC', 'America/New_York', cases.added_at )), 'YYYY-MM')) = (TO_CHAR(DATE_TRUNC('month', clinical_time_per_subs.subscription_month ), 'YYYY-MM'))
-WHERE (accounts.galileo_care_mode ) <> 'undecided' AND ((subscription_tiers_daily.business_line) <> 'DTE' OR (subscription_tiers_daily.business_line) IS NULL) AND ((subscription_tiers_daily.subscription_type ) <> 'Free' AND (subscription_tiers_daily.subscription_type ) <> 'Free - Transactional' OR (subscription_tiers_daily.subscription_type ) IS NULL)
+WHERE (accounts.company_care_mode ) <> 'undecided' AND ((subscription_tiers_daily.business_line) <> 'DTE' OR (subscription_tiers_daily.business_line) IS NULL) AND ((subscription_tiers_daily.subscription_type ) <> 'Free' AND (subscription_tiers_daily.subscription_type ) <> 'Free - Transactional' OR (subscription_tiers_daily.subscription_type ) IS NULL)
 GROUP BY
     1,
     2) ww
@@ -34,7 +34,7 @@ LEFT JOIN marts_digital.person_day  AS subscription_tiers_daily ON subscription_
 LEFT JOIN marts_digital.clinical_time_per_subs  AS clinical_time_per_subs ON accounts.account_id=clinical_time_per_subs.account_id
 LEFT JOIN marts_digital.cases  AS cases ON cases.account_id  = accounts.account_id and cases.account_id=clinical_time_per_subs.account_id and
           (TO_CHAR(DATE_TRUNC('month', CONVERT_TIMEZONE('UTC', 'America/New_York', cases.added_at )), 'YYYY-MM')) = (TO_CHAR(DATE_TRUNC('month', clinical_time_per_subs.subscription_month ), 'YYYY-MM'))
-WHERE (accounts.galileo_care_mode ) <> 'undecided' AND ((subscription_tiers_daily.business_line) <> 'DTE' OR (subscription_tiers_daily.business_line) IS NULL) AND ((subscription_tiers_daily.subscription_type ) <> 'Free' AND (subscription_tiers_daily.subscription_type ) <> 'Free - Transactional' OR (subscription_tiers_daily.subscription_type ) IS NULL)
+WHERE (accounts.company_care_mode ) <> 'undecided' AND ((subscription_tiers_daily.business_line) <> 'DTE' OR (subscription_tiers_daily.business_line) IS NULL) AND ((subscription_tiers_daily.subscription_type ) <> 'Free' AND (subscription_tiers_daily.subscription_type ) <> 'Free - Transactional' OR (subscription_tiers_daily.subscription_type ) IS NULL)
 GROUP BY
     1
 ORDER BY
