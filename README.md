@@ -17,3 +17,8 @@ function awsprod ()
 # automatically create remote branches to push to
 git config --global --add --bool push.autoSetupRemote true
 ```
+
+merge main into dev branch:
+```
+git checkout custom_branch && git rebase master
+```
