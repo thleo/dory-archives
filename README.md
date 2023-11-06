@@ -22,3 +22,8 @@ merge main into dev branch:
 ```
 git checkout custom_branch && git rebase master
 ```
+
+### shell docs for prompt customisation
+- [Prompt time display cheatsheet][1]
+
+[1]:https://www.tweaking4all.com/software/macosx-software/customize-zsh-prompt/
