@@ -18,9 +18,13 @@ function awsprod ()
 git config --global --add --bool push.autoSetupRemote true
 ```
 
+```
+git switch <branch>
+```
+
 merge main into dev branch:
 ```
-git checkout custom_branch && git rebase master
+git checkout custom_branch && git rebase main
 ```
 
 ### shell docs for prompt customisation
