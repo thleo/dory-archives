@@ -19,37 +19,30 @@ dbt_logs_start = False
 
 CWLogs = open(log_file_path, 'r')
 CW_lines = CWLogs.readline()
-if paste_logs:
-    dbt_logs_start = True
-# print(CW_lines)
-    for line in paste_logs.splitlines():
-        CW_lines = line
-        if re.search('Running with dbt',CW_lines):
-            dbt_logs_start=True
-        elif re.search('on-run-end hooks',CW_lines):
-            dbt_logs_start=False
-        if dbt_logs_start:
-            model_name_re = re.search('[a-z\_]+\.{1}[a-z\_\d]+',CW_lines)
-            if model_name_re:
-                if not (re.search(except_regex_string,line)):
-                    model_name = model_name_re.group()
-                    print(line)
-                    models_to_rerun.append(model_name)
-else:
-    while CW_lines:
-        CW_lines = CWLogs.readline()
-        if re.search('Running with dbt',CW_lines):
-            dbt_logs_start=True
-        elif re.search('on-run-end hooks',CW_lines):
-            dbt_logs_start=False
-        if dbt_logs_start:
-            model_name_re = re.search('[a-z\_]+\.{1}[a-z\_\d]+',CW_lines)
-            if model_name_re:
-                if not (re.search(except_regex_string,CW_lines)):
-                    model_name = model_name_re.group()
-                    models_to_rerun.append(model_name)
+def process_lines(lines, dbt_logs_start=False):
+    models_to_rerun = []
+    for line in lines:
+        if 'Running with dbt' in line:
+            dbt_logs_start = True
+        elif 'on-run-end hooks' in line:
+            dbt_logs_start = False
 
-CWLogs.close()  
+        if dbt_logs_start:
+            model_name_re = re.search('[a-z\_]+\.{1}[a-z\_\d]+', line)
+            if model_name_re and not re.search(except_regex_string, line):
+                model_name = model_name_re.group()
+                models_to_rerun.append(model_name)
+    return models_to_rerun
+
+if paste_logs:
+    lines = paste_logs.splitlines()
+    models_to_rerun = process_lines(lines, dbt_logs_start=True)
+else:
+    with open(log_file_path, 'r') as CWLogs:
+        lines = CWLogs.readlines()
+        models_to_rerun = process_lines(lines)
+
+# No need to close the file if you're using 'with' statement
 
 # get model names without schemas
 models_to_rerun_shortnames = []
