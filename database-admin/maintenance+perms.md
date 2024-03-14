@@ -67,22 +67,29 @@ FROM pg_catalog.pg_user_info pui
 WHERE useconfig LIKE '%admin%';
 ```
 
--- GRANTS
+## GRANTS
+```sql
 -- for new tables
 -- delivery_business_production_extracts.group_table
 ALTER DEFAULT PRIVILEGES IN SCHEMA app_references GRANT
 SELECT
     ON tables TO GROUP data_eng_group;
-
+```
+```sql
 GRANT USAGE ON SCHEMA delivery_business_production_extract TO GROUP data_eng_group;
-
+```
+```sql
 -- GRANT dbt user
-GRANT USAGE ON SCHEMA digital_business_production_reference TO dbt;
+GRANT USAGE ON SCHEMA digital_business_production_reference TO dbt;```
 
+```sql
 grant
 select
-    on all tables in schema digital_business_production_reference to dbt;
+on all tables in schema digital_business_production_reference to dbt;
+```
 
+```sql
 ALTER DEFAULT PRIVILEGES IN SCHEMA digital_business_production_reference GRANT
 SELECT
     ON tables TO dbt;
+```
