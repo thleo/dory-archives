@@ -59,3 +59,23 @@ LIMIT 5;
 SELECT *
 FROM pg_catalog.pg_user_info pui
 WHERE useconfig LIKE '%admin%';
+
+-- GRANTS
+-- for new tables
+-- delivery_business_production_extracts.group_table
+ALTER DEFAULT PRIVILEGES IN SCHEMA app_references GRANT
+SELECT
+    ON tables TO GROUP data_eng_group;
+
+GRANT USAGE ON SCHEMA delivery_business_production_extract TO GROUP data_eng_group;
+
+-- GRANT dbt user
+GRANT USAGE ON SCHEMA digital_business_production_reference TO dbt;
+
+grant
+select
+    on all tables in schema digital_business_production_reference to dbt;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA digital_business_production_reference GRANT
+SELECT
+    ON tables TO dbt;
