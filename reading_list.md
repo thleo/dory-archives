@@ -16,6 +16,7 @@
 ## Text
 - [Service Mesh for Dummies][5]
 - [What is Layer 7?][6]
+- [Terraforming Snowflake Quickstart Guide][8]
 
 # Developer Experience
 ## shell/terminal modifications
@@ -30,3 +31,4 @@
 [5]: https://www.vmware.com/content/dam/learn/en/amer/fy21/pdf/498818_Service_Mesh_for_Dummies.pdf
 [6]: https://www.cloudflare.com/learning/ddos/what-is-layer-7/
 [7]: https://direnv.net/
+[8]: https://quickstarts.snowflake.com/guide/terraforming_snowflake/index.html#0
