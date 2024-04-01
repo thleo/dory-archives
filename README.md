@@ -12,19 +12,24 @@ function awsprod ()
     
 }
 ```
-### github
+### git / github
 ```bash
 # automatically create remote branches to push to
 git config --global --add --bool push.autoSetupRemote true
 ```
 
-```
+```bash
 git switch <branch>
 ```
 
-merge main into dev branch:
-```
+#### merge main into dev branch:
+```bash
 git checkout custom_branch && git rebase main
+```
+#### squash commits into a new clean looking branch
+```bash
+nbranch new-clean-branch
+git merge --squash old-messy-branch-with-many-commits
 ```
 
 ### shell docs for prompt customisation
