@@ -17,6 +17,9 @@
 - [Service Mesh for Dummies][5]
 - [What is Layer 7?][6]
 - [Terraforming Snowflake Quickstart Guide][8]
+- [Consuming and Decoding JSON in Terraform][9]
+
+
 
 # Developer Experience
 ## shell/terminal modifications
@@ -32,3 +35,4 @@
 [6]: https://www.cloudflare.com/learning/ddos/what-is-layer-7/
 [7]: https://direnv.net/
 [8]: https://quickstarts.snowflake.com/guide/terraforming_snowflake/index.html#0
+[9]: https://dev.to/lucassha/consuming-and-decoding-json-in-terraform-309p
