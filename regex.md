@@ -43,3 +43,10 @@ replace `\ndescription: '{{ doc("MARKDOWN") }}'\n- name: `
 1. complete.
 
     
+### case insensitive search
+```python
+import re
+print (re.search('bush', 'BuSh', re.IGNORECASE))
+print (re.match('bush', 'BuSh', re.IGNORECASE))
+print (re.sub('bush', 'xxxx', 'Bushmeat', flags=re.IGNORECASE))
+```
