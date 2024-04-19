@@ -1,9 +1,13 @@
 # General Resources
 ## Technical Education
 - [Fuzzy Matching at Scale][2]
+- [What's the difference between a GitHub Action and a Workflow?][11]
 
 ## Miscellaneous
 - [Contribute to Atom Keybindings for VSCode][1]
+- [Building Community Inclusivity at Stack Overflow][10]
+### File types
+- [Why do Linux things use tar.gz so much?][12]
 
 ## Audio
 <!-- Add audio resources here -->
@@ -36,3 +40,6 @@
 [7]: https://direnv.net/
 [8]: https://quickstarts.snowflake.com/guide/terraforming_snowflake/index.html#0
 [9]: https://dev.to/lucassha/consuming-and-decoding-json-in-terraform-309p
+[10]: https://stackoverflow.blog/2019/07/18/building-community-inclusivity-stack-overflow/
+[11]: https://dev.to/github/whats-the-difference-between-a-github-action-and-a-workflow-2gba
+[12]: https://www.reddit.com/r/explainlikeimfive/comments/4jemz8/eli5_why_do_linux_things_use_targz_so_much/
