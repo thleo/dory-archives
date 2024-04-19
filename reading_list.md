@@ -9,6 +9,9 @@
 ### File types
 - [Why do Linux things use tar.gz so much?][12]
 
+### Confluence knowledge
+- [How to search for pages created by an inactive user][13]
+
 ## Audio
 <!-- Add audio resources here -->
 
@@ -43,3 +46,4 @@
 [10]: https://stackoverflow.blog/2019/07/18/building-community-inclusivity-stack-overflow/
 [11]: https://dev.to/github/whats-the-difference-between-a-github-action-and-a-workflow-2gba
 [12]: https://www.reddit.com/r/explainlikeimfive/comments/4jemz8/eli5_why_do_linux_things_use_targz_so_much/
+[13]: https://community.atlassian.com/t5/Confluence-questions/How-to-search-for-pages-created-by-an-inactive-user/qaq-p/1227030
