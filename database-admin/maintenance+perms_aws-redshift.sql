@@ -1,12 +1,20 @@
-# Maintenance and Permissions SQL Script
+-- Create a new schema named "dev_dleong" with the authorization set to dleong.
+create schema "dev_dleong" authorization dleong;
 
-This document contains the SQL script for maintenance and permissions, originally found in `maintenance+perms.sql`.
+-- Grant the usage privilege on the plpythonu language to the data_eng_group group.
+grant usage on language plpythonu to group data_eng_group;
 
-## Section 1: Checking Previous Queries
+-- Delete records from the my_schema.csv_files_data table where the file_name is 'generic_file.xlsx'.
+DELETE FROM
+    my_schema.csv_files_data
+WHERE
+    file_name = 'generic_file.xlsx';
 
-The following query retrieves information about queries, errors, and users from the PostgreSQL system catalog views.
 
-```sql
+-- This query retrieves information about queries that encountered an error during execution.
+-- It includes details such as the username, error code, error message, query text, start time, end time, and query runtime.
+-- The query filters the results based on the error code, query text, start time, and other conditions.
+
 SELECT
     usename,
     errcode,
@@ -28,79 +36,53 @@ WHERE
     AND querytxt LIKE '%user_id":300%'
     AND starttime > '2023-03-01'
 ;
-```
 
-## Diagnostic Queries
-
-This section contains several diagnostic queries used for system analysis and troubleshooting.
-
-Query 1: Retrieve Last 5 Queries
-```sql
+-- Diagnotistic Queries
 SELECT *
 FROM sys_query_history
 LIMIT 5;
-```
-Query 2: Retrieve Error Details for a Specific Query
-```sql
+
 SELECT *
 FROM sys_load_error_detail
 WHERE query_id = '198142947'
 LIMIT 50;
-```
-Query 3: Retrieve All Errors
-```sql
+
 SELECT *
 FROM pg_catalog.stl_error;
-```
-Query 4: Retrieve Specific Query and Associated Errors
-```sql
+
 SELECT *
 FROM pg_catalog.stl_query q
 LEFT JOIN pg_catalog.stl_error e ON q.pid = e.pid
 WHERE query = '198142947'
 LIMIT 5;
-```
-Query 5: Retrieve User Info for Admin Users
-```sql
+
 SELECT *
 FROM pg_catalog.pg_user_info pui
 WHERE useconfig LIKE '%admin%';
-```
 
-## GRANTS
-```sql
+-- GRANTS
 -- for new tables
 -- delivery_business_production_extracts.group_table
 ALTER DEFAULT PRIVILEGES IN SCHEMA app_references GRANT
 SELECT
     ON tables TO GROUP data_eng_group;
-```
-```sql
-GRANT USAGE ON SCHEMA delivery_business_production_extract TO GROUP data_eng_group;
-```
-```sql
--- GRANT dbt user
-GRANT USAGE ON SCHEMA digital_business_production_reference TO dbt;```
 
-```sql
+GRANT USAGE ON SCHEMA delivery_business_production_extract TO GROUP data_eng_group;
+
+-- GRANT dbt user
+GRANT USAGE ON SCHEMA digital_business_production_reference TO dbt;
+
 grant
 select
-on all tables in schema digital_business_production_reference to dbt;
-```
+    on all tables in schema digital_business_production_reference to dbt;
 
-```sql
 ALTER DEFAULT PRIVILEGES IN SCHEMA digital_business_production_reference GRANT
 SELECT
     ON tables TO dbt;
-```
 
-## GET DDL
-This query will allow you to grab the DDL for a set of tables in the specified schema.
-It returns a single column with DDL SQL.
-```sql
+-- GET DDL
 -- note: User generated schema's are not in pg_table_def search path by default
 -- SET SEARCH_PATH TO android; -- this will allow you to see the schema in the search path
-
 SELECT ddl
 FROM admin.v_generate_tbl_ddl
 JOIN pg_table_def ON (
@@ -110,4 +92,3 @@ JOIN pg_table_def ON (
 WHERE admin.v_generate_tbl_ddl.schemaname = 'android'
 GROUP BY admin.v_generate_tbl_ddl.tablename, ddl, "seq"
 ORDER BY admin.v_generate_tbl_ddl.tablename ASC, "seq" ASC;
-```
