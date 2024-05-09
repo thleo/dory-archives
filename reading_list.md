@@ -19,6 +19,7 @@
 - [Python Record Lineage Docs][3]
 - [Moving from Atom to VSCode][4]
 - [DBT Application Command Loops and Executing Shell Script][14]
+- [State of Testing in DBT][15]
 
 # Infrastructure Resources
 ## Text
@@ -26,10 +27,13 @@
 - [What is Layer 7?][6]
 - [Terraforming Snowflake Quickstart Guide][8]
 - [Consuming and Decoding JSON in Terraform][9]
+- [How-To: CI/CD On Snowflake With Terraform, Github, And Github Actions][16]
+
 
 # Developer Experience
 ## shell/terminal modifications
 - [direnv][7]
+
 
 
 <!-- Links -->
@@ -47,3 +51,5 @@
 [12]: https://www.reddit.com/r/explainlikeimfive/comments/4jemz8/eli5_why_do_linux_things_use_targz_so_much/
 [13]: https://community.atlassian.com/t5/Confluence-questions/How-to-search-for-pages-created-by-an-inactive-user/qaq-p/1227030
 [14]: https://nadiaslnv.medium.com/dbt-application-command-loops-and-executing-shell-script-85330d871391
+[15]: https://discourse.getdbt.com/t/state-of-testing-in-dbt/1778
+[16]: https://www.youtube.com/watch?v=chqyASQ_Rrg
