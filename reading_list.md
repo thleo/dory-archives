@@ -21,6 +21,7 @@
 - [DBT Application Command Loops and Executing Shell Script][14]
 - [State of Testing in DBT][15]
 
+
 # Infrastructure Resources
 ## Text
 - [Service Mesh for Dummies][5]
@@ -28,6 +29,7 @@
 - [Terraforming Snowflake Quickstart Guide][8]
 - [Consuming and Decoding JSON in Terraform][9]
 - [How-To: CI/CD On Snowflake With Terraform, Github, And Github Actions][16]
+- [Container for Dummies][17]
 
 
 # Developer Experience
@@ -53,3 +55,5 @@
 [14]: https://nadiaslnv.medium.com/dbt-application-command-loops-and-executing-shell-script-85330d871391
 [15]: https://discourse.getdbt.com/t/state-of-testing-in-dbt/1778
 [16]: https://www.youtube.com/watch?v=chqyASQ_Rrg
+[17]: https://qcmtech.com/wp-content/uploads/2017/09/HPE_Pub-10010-Containers-for-Dummies.pdf
+[18]: https://gitlab.com/jake.gillberg/configuration.nix/
