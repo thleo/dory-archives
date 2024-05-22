@@ -16,11 +16,11 @@ aws lambda invoke --function-name generic-lambda-function-name --payload $(echo 
 ### s3
 recursive file search
 ```shell
-aws s3 ls s3://galileo-vendor-uhc-production-ep91jknafo5194tn/to_galileo/ --recursive | grep -E 'GALILEO_2022|GALILEO_2023'
+aws s3 ls s3://bucket_of_holding/bag_of_holding/ --recursive | grep -E 'poison_arrow|healing_potion'
 ```
 ## ECS
 ### Fargate 
 example command
 ```shell
-aws ecs execute-command --region us-east-1 --cluster fargate-cluster-name --task asdlkjfsldkj2344234klj --container nameOfContainer --command /bin/bash --interactive --profile production
+aws ecs execute-command --region us-east-1 --cluster fargate-cluster-name --task do_the_thing --container nameOfContainer --command /bin/bash --interactive --profile production
 ```
