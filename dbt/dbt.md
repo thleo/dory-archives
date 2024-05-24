@@ -14,3 +14,7 @@ regex for combing dbt logs
 [\d*:].*success.*\]
 ```
 
+### Related guides
+- [Taking Your dbt CI Pipeline to the Next Level][1]
+
+[1]: https://www.datafold.com/blog/taking-your-dbt-ci-pipeline-to-the-next-level
