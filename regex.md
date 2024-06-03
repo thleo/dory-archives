@@ -48,5 +48,5 @@ replace `\ndescription: '{{ doc("MARKDOWN") }}'\n- name: `
 import re
 print (re.search('bush', 'BuSh', re.IGNORECASE))
 print (re.match('bush', 'BuSh', re.IGNORECASE))
-print (re.sub('bush', 'xxxx', 'Bushmeat', flags=re.IGNORECASE))
+print (re.sub('bush', 'xxxx', 'buShels', flags=re.IGNORECASE))
 ```
