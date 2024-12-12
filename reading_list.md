@@ -1,4 +1,7 @@
 # General Resources
+## Command References
+- [yq - YAML Sorting][19]
+
 ## Technical Education
 - [Fuzzy Matching at Scale][2]
 - [What's the difference between a GitHub Action and a Workflow?][11]
@@ -57,3 +60,4 @@
 [16]: https://www.youtube.com/watch?v=chqyASQ_Rrg
 [17]: https://qcmtech.com/wp-content/uploads/2017/09/HPE_Pub-10010-Containers-for-Dummies.pdf
 [18]: https://gitlab.com/jake.gillberg/configuration.nix/
+[19]: https://mikefarah.gitbook.io/yq/operators/sort#sort-descending-by-string-field

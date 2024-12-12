@@ -105,7 +105,11 @@ for removing all success/start lines:
 ```python
 .*(success|run).*\n
 ```
+### dev macros/hacks
+- [use a macro to limit read size during model builds][2]
+
 ### Related guides
 - [Taking Your dbt CI Pipeline to the Next Level][1]
 
 [1]: https://www.datafold.com/blog/taking-your-dbt-ci-pipeline-to-the-next-level
+[2]: https://github.com/dbt-labs/docs.getdbt.com/discussions/1334
