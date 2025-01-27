@@ -3,6 +3,11 @@
 `is True` | `is False` -> `= True` | `= False`
 
 ### docs
+#### docs site
+- the default overview page of the docs site can be changed
+  - [changing docs default site (dbt forums)][3]
+  - [s/o on changing the default overview][4]
+  
 #### doc blocks
 
 ```python
@@ -113,3 +118,5 @@ for removing all success/start lines:
 
 [1]: https://www.datafold.com/blog/taking-your-dbt-ci-pipeline-to-the-next-level
 [2]: https://github.com/dbt-labs/docs.getdbt.com/discussions/1334
+[3]: https://discourse.getdbt.com/t/customizing-dbt-docs-website/3183/2
+[4]: https://stackoverflow.com/questions/69191415/dbt-docs-generate-override-the-default-overview-page-with-custom-content-in-th
