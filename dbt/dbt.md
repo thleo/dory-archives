@@ -7,6 +7,8 @@
 - the default overview page of the docs site can be changed
   - [changing docs default site (dbt forums)][3]
   - [s/o on changing the default overview][4]
+##### Hosting Docs site
+- [https://medium.com/dbt-local-taiwan/host-dbt-documentation-site-with-github-pages-in-5-minutes-7b80e8b62feb][5]
   
 #### doc blocks
 
@@ -120,3 +122,4 @@ for removing all success/start lines:
 [2]: https://github.com/dbt-labs/docs.getdbt.com/discussions/1334
 [3]: https://discourse.getdbt.com/t/customizing-dbt-docs-website/3183/2
 [4]: https://stackoverflow.com/questions/69191415/dbt-docs-generate-override-the-default-overview-page-with-custom-content-in-th
+[5]: [https://medium.com/dbt-local-taiwan/host-dbt-documentation-site-with-github-pages-in-5-minutes-7b80e8b62feb]
