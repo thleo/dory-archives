@@ -117,9 +117,11 @@ for removing all success/start lines:
 
 ### Related guides
 - [Taking Your dbt CI Pipeline to the Next Level][1]
+- [FAQ: I got an "unused model configurations" error message. What does this mean?][6]
 
 [1]: https://www.datafold.com/blog/taking-your-dbt-ci-pipeline-to-the-next-level
 [2]: https://github.com/dbt-labs/docs.getdbt.com/discussions/1334
 [3]: https://discourse.getdbt.com/t/customizing-dbt-docs-website/3183/2
 [4]: https://stackoverflow.com/questions/69191415/dbt-docs-generate-override-the-default-overview-page-with-custom-content-in-th
 [5]: [https://medium.com/dbt-local-taiwan/host-dbt-documentation-site-with-github-pages-in-5-minutes-7b80e8b62feb]
+[6]: https://discourse.getdbt.com/t/faq-i-got-an-unused-model-configurations-error-message-what-does-this-mean/112
