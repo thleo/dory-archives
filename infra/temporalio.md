@@ -1,5 +1,14 @@
 # 🧠 Temporal & Orchestration Notes
 
+  - [🏗️ Core Concepts](#core-concepts)
+    - [⚙️ Execution Architecture](#execution-architecture)
+    - [🧩 Namespace vs Task Queue](#namespace-vs-task-queue)
+- [Quickstart + Command ref](#quickstart--command-ref)
+  - [✅ Start Local Dev Server](#start-local-dev-server)
+  - [🏷️ Create a Namespace (with `temporal` CLI)](#create-a-namespace)
+    - [📝 Example](#example)
+  - [🔍 List Namespaces](#list-namespaces)
+
 ## 🏗️ Core Concepts
 
 * **Temporal** is a workflow orchestration engine that handles state, retries, and task distribution across a system.
@@ -15,14 +24,14 @@
     * **Task Queue**: Name of the queue your worker is polling (must match exactly)
     * **Workflow Type**: The Python/Go/Java class name (e.g., `MoneyTransfer`), case-sensitive
 
-### ⚙️ Execution Architecture
+### Execution Architecture
 
 * **Workers run in a Kubernetes cluster** (or other compute platform).
 * Temporal handles coordination of retries, state, failures—workers are stateless and disposable.
 
 ---
 
-### 🧩 Namespace vs Task Queue
+### Namespace vs Task Queue
 
 | Feature                            | **Namespace**                                             | **Task Queue**                                            |
 | ---------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
@@ -36,7 +45,7 @@
 
 # Quickstart + Command ref
 
-## ✅ Start Local Dev Server
+## Start Local Dev Server
 
 ```bash
 temporal server dev start
@@ -51,7 +60,8 @@ temporal server dev start
 
 ---
 
-## 🏷️ Create a Namespace (with `temporal` CLI)
+## Create a Namespace 
+_(with `temporal` CLI)_
 
 ```bash
 temporal namespace create \
@@ -60,7 +70,7 @@ temporal namespace create \
   --retention 24h
 ```
 
-### 📝 Example
+### Example
 
 ```bash
 temporal namespace create \
@@ -74,7 +84,7 @@ temporal namespace create \
 
 ---
 
-## 🔍 List Namespaces
+## List Namespaces
 
 ```bash
 temporal namespace list
